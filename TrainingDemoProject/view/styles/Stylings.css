@@ -23,3 +23,18 @@
 	line-height: 80px;
     font-size: 20px;
 }
+.movieName {
+	font-style: oblique;
+    font-family: cursive;
+    font-size: -webkit-xxx-large;
+}
+.boxed {
+	border : 2px solid green;
+}
+.customerReview {
+	font-family: cursive;
+    font-size: larger;
+}
+.hidden {
+	display : none;
+}
