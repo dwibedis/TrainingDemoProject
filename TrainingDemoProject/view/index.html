@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href=".\styles\Stylings.css" />
 <title>MOVIE REVIEW</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8" />
 </head>
 <body>
-	<div class="tagLine">
-		<p class="center">REVIEW THE WAY YOU SEE!!</p>
-		<p class="right">powered by mindfire....</p>
-	</div>
-	<div class="searchArea">
-		<div class="searchBox">
-			MOVIE NAME : <input type="search" id="searchQuery" name="searchQuery"
-				size=80 placeholder="movie name" required>
-			<button id = "searchAction" onClick = "search()">Search</button>
+	<nav class="navbar navbar-default tagLine">
+		<div class="container-fluid ">
+			<p class="center">REVIEW THE WAY YOU SEE!!</p>
+			<p class="right">powered by mindfire....</p>
 		</div>
+	</nav>
+	<div class="input-group">
+		<input type="search" id="searchQuery" name="searchQuery" size=80
+			placeholder="Search for any movie" class="form-control" required>
+		<span class="input-group-btn">
+			<button id="searchAction" onClick="search()"
+				class="btn btn-default glyphicon glyphicon-search"></button>
+		</span>
 	</div>
-	<p class="center movieName" id="nameOfMovie">The largest collection of
-	movie reviews</p>
-	<div id="result">
+	<div>
+		<p class="center movieName container-fluid" id="nameOfMovie">The
+			largest collection of movie reviews</p>
 	</div>
-	<div id = "askReview" class = "hidden">
-		<p class="center customerReview" >Your review:</p>
-		<textArea rows = "10" cols = "270" placeholder = "Your review....." id = "review" > </textArea>
-		<button id = "submitReview" onClick = "submitReview()"> submit </button>
+	<div id="result"></div>
+	<div id="askReview" class="hidden container-fluid">
+		<p class="center customerReview">Your review:</p>
+		<input type="text" class="form-control" id="rating" maxlength=5
+			placeholder="stars..."></input>
+		<textArea rows="10" cols="270" placeholder="Your review....."
+			id="review" class="form-control"> </textArea>
+		<button id="submitReview" onClick="submitReview()">submit</button>
 	</div>
 </body>
-<script src=".\script\fetchResults.js">
-	
+<script src=".\script\fetchResults.js"></script>
+<script>
+	var input = document.getElementById("searchQuery");
+	input.addEventListener("keyup", function(event) {
+		event.preventDefault();
+		if (event.keyCode === 13) {
+			document.getElementById("searchAction").click();
+		}
+	});
+>>>>>>> Latest Done
 </script>
 </html>
